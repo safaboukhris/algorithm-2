@@ -1,0 +1,36 @@
+ALGORITHM SUM of distinct element
+VAR
+    tab1,tab2 : ARRAY-OF INTEGER[10]
+    sum : INTEGER := 0 ;
+    i , j : INTEGER 
+BEGIN
+    FOR i FROM 0 TO tab1[lenght-1]  DO  //insert element  from user in tab1
+        write ("enter element of tab1")
+        read (tab[i]);
+    END_FOR
+    FOR j FROM 0 TO tab2[lenght-1]  DO     // insert element from user in tab2
+        write("enter element of tab2")
+        read (tab2[j]);
+    END_FOR
+    FOR i FROM 0 TO tab1[lenght-1]  DO
+    FOR j FROM 0 TO tab2[lenght-1]  DO
+        IF ( tab1[i]=tab2[j] ) THEN      //compare element from tab1 with element tab2
+            write ("element are not distinct")
+        END_IF
+        IF ( tab1[i]<>tab2[j] ) THEN
+            sum := sum + tab1[i];
+        END_IF
+    END_FOR
+    END_FOR
+    FOR j FROM 0 TO tab2[lenght-1]  DO  //compare element from tab2 with element tab1
+    FOR i FROM 0 TO tab1[lenght-1]  DO
+        IF (tab2[j] = tab1[i]) THEN
+            write ("element are not distinct")
+        END_IF
+        IF ( tab2[j] <>tab1[i]) THEN
+            sum := sum + tab2[j];
+        END_IF
+    END_FOR
+    END_FOR
+    write ("sum of distinct element is",sum)  //display the result of sum
+END
