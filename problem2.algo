@@ -1,4 +1,4 @@
-FUNCTION dot_product(V1,V2 : array_of_INTEGER [10]) : INTEGER  // sub_algorthim
+FUNCTION dot_product(V1,V2 : ARRAY_OF INTEGER [10]) : INTEGER  // sub_algorthim
 VAR
     dot , i : INTEGER
 BEGIN
@@ -15,8 +15,8 @@ BEGIN
 END
 ALGORITHM DOT_PRODUCT          //main_algorithm
 VAR
-    V1,V2 : array_of_INTEGER[10];
-    dot : INTEGER 
+    V1,V2 : ARRAY_OF INTEGER[10];
+    ps : INTEGER 
     i : INTEGER   //declare the count of the array
 BEGIN
     FOR i FROM 0 TO V1[lenght-1]  DO        //Declaration of premier array from user (V1)
@@ -27,8 +27,8 @@ BEGIN
         write ("element of array V2")
         read (V2[i])
     END_FOR
-    dot := dot_product(V1,V2)       //Passing parameter by Value
-    IF (dot = 0) THEN
+    ps := dot_product(V1,V2)       //Passing parameter by Value
+    IF (ps = 0) THEN
         write ("V1 and V2 are orthogonal")
         ELSE
             write("V1 and V2 are not orthogonal")
@@ -36,7 +36,7 @@ BEGIN
 END
 
 // Modify the previous algorithm if you use a dot_product function instead of a procedure
-PROCEDURE dot_product(V1,V2:array_of_INTEGER)    
+PROCEDURE dot_product( VAR V1,V2:ARRAY_OF INTEGER)    //Passibg parameter by reference
 VAR
     i,dot : INTEGER;
 BEGIN
